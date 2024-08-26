@@ -156,6 +156,8 @@ exports.updateReview=catchAsync(async(req,res,next)=>{
         _id:req.params.id,
         creator:req.user._id
     });
+    if(!review)
+    {return next(new appError('Review do-not exists!',404));};
 
     review.review=req.body.review;
     review.ratings=req.body.ratings;

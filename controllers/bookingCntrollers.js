@@ -252,7 +252,7 @@ exports.completeBooking=catchAsync(async(req,res,next)=>{
     console.log('BOOKING IS : ',booking);
 
 
-    if(booking.length===0)
+    if(!booking)
     {return next(new appError('No accepted booking found to be shown as completed!',404));};
 booking.status='completed';
     booking.completedBooking=true;
