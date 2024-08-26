@@ -263,62 +263,62 @@ const {email,otp}=req.body;
 //deleteOneUser
 exports.deleteOneUser=catchAsync(async(req,res,next)=>{
 
-    const user=await User.findById(req.params.id);
+    const user=await User.findByIdAndDelete(req.params.id);
 
     if(!user)
     {return next(new appError('User not fund !',404));};
 
-    await Review.deleteMany({
-        $or:
-        [
-            {creator:user._id},
-            {receiver:user._id}
-        ]
-    });
+    // await Review.deleteMany({
+    //     $or:
+    //     [
+    //         {creator:user._id},
+    //         {receiver:user._id}
+    //     ]
+    // });
     
-    await Booking.deleteMany({
-        $or:
-        [
-            {creator:user._id},
-            {booked:user._id}
-        ]
-    });
+    // await Booking.deleteMany({
+    //     $or:
+    //     [
+    //         {creator:user._id},
+    //         {booked:user._id}
+    //     ]
+    // });
 
-    await MeetingLocation.deleteMany({
-        $or:
-        [
-            {creator:user._id},
-            {meetingPerson:user._id}
-        ]
-    });
+    // await MeetingLocation.deleteMany({
+    //     $or:
+    //     [
+    //         {creator:user._id},
+    //         {meetingPerson:user._id}
+    //     ]
+    // });
 
-    await History.deleteMany({
-        creator:user._id
-    });
+    // await History.deleteMany({
+    //     creator:user._id
+    // });
 
-    await Block.deleteMany({
-        $or:
-        [
-            {creator:user._id},
-            {blocked:user._id}
-        ]
-    });
+    // await Block.deleteMany({
+    //     $or:
+    //     [
+    //         {creator:user._id},
+    //         {blocked:user._id}
+    //     ]
+    // });
 
-    await Like.deleteMany({
-        $or:
-        [
-            {creator:user._id},
-            {liked:user._id}
-        ]
-    });
+    // await Like.deleteMany({
+    //     $or:
+    //     [
+    //         {creator:user._id},
+    //         {liked:user._id}
+    //     ]
+    // });
 
-    await Report.deleteMany({
-        $or:
-        [
-            {report:user._id},
-            {creator:user._id}
-        ]
-    })
+    // await Report.deleteMany({
+    //     $or:
+    //     [
+    //         {report:user._id},
+    //         {creator:user._id}
+    //     ]
+    // })
 
 res.status(200).json({
         message:'USer has been completely deletd !',
