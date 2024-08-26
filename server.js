@@ -6,7 +6,7 @@ const mongoose=require('mongoose')
 
 dotenv.config({ path: 'config.env' })
 const server=http.createServer(app)
-const port=process.env.port
+const port=process.env.PORT
 const DB=process.env.DB
 
 
