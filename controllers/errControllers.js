@@ -64,27 +64,27 @@ const handleCastError = (err) => {
   
   
     // if (process.env.NODE_ENV === "development") {
-    //  devErrors(res, error);
+    devErrors(res, error);
 //    } else if (process.env.NODE_ENV === "production") 
 
 // {
           
-      if (error.name === "TokenExpiredError") {
-        error = tokenExpiredError(error);
-      }
-      if (error.name === "JsonWebTokenError") {
-        error = jsonWebTokenError(error);
-      }
-      if (error.code === 11000) {
-        error = duplicateKeyError(error);
-      }
-      if (error.name === "ValidationError") {
-        error = validationError(error);
-      }
-      if (error.name === "CastError") {
-        error = handleCastError(error);
-      }
-      prodErrors(res,error);
+      // if (error.name === "TokenExpiredError") {
+      //   error = tokenExpiredError(error);
+      // }
+      // if (error.name === "JsonWebTokenError") {
+      //   error = jsonWebTokenError(error);
+      // }
+      // if (error.code === 11000) {
+      //   error = duplicateKeyError(error);
+      // }
+      // if (error.name === "ValidationError") {
+      //   error = validationError(error);
+      // }
+      // if (error.name === "CastError") {
+      //   error = handleCastError(error);
+      // }
+      // prodErrors(res,error);
     // }
-    
+
 }
