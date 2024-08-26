@@ -75,7 +75,7 @@ res.status(200).json({
 //updateHistory
 exports.updateHistory=catchAsync(async(req,res,next)=>{
 
-    const history=await History.find({
+    const history=await History.findOne({
         $and:
         [
 {_id:req.params.id},
