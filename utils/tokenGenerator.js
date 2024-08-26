@@ -5,4 +5,4 @@ const createaToken=id=>{
     )
 }
 
-module.exports=createaToken
+module.exports=createaToken;

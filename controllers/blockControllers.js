@@ -5,10 +5,10 @@ const Booking = require('../models/bookingModel');
 const handlerFactory=require('./handlerFactory');
 
 
-exports.creator=catchAsync(async(req,res,next)=>{
-    res.body.creator=req.user._id;
-    next();
-});
+// exports.creator=catchAsync(async(req,res,next)=>{
+//     res.body.creator=req.user._id;
+//     next();
+// });
 
 //blockSOmeOne
 exports.block=catchAsync(async(req,res,next)=>{
